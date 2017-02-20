@@ -27,7 +27,7 @@ U+1F63D	😽	KISSING CAT FACE WITH CLOSED EYES
 U+1F644	🙄	FACE WITH ROLLING EYES
 ```
 
-Você passa uma um mais palavras como argumento, e o programa devolve uma lista ordenada de caracteres Unicode cujas descrições contém todas as palavras que você passou.
+Você passa uma ou mais palavras como argumento, e o programa devolve uma lista ordenada de caracteres Unicode cujas descrições contém todas as palavras que você passou.
 
 Leia mais nas [páginas do projeto](https://ThoughtWorksInc.github.io/runas/).
 
