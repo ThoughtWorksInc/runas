@@ -8,13 +8,13 @@ Seguiremos o princípio do [TDD](http://tdd.caelum.com.br/) _(Test-Driven Develo
 
 ## Conteúdo
 
-1. [Iniciando o TDD](passo-01)
-2. [Primeira função completa](passo-02)
-3. [Gerar a lista de caracteres](passo-03)
-4. [MVP 1, o mínimo que é útil](passo-04)
-5. [Busca por palavras inteiras](passo-05)
-6. [Exercício: hífens e nomes antigos](passo-06)
-7. [Bônus: download automático da UCD](passo-07)
+1. [Iniciando o TDD](passo-01.md)
+2. [Primeira função completa](passo-02.md)
+3. [Gerar a lista de caracteres](passo-03.md)
+4. [MVP 1, o mínimo que é útil](passo-04.md)
+5. [Busca por palavras inteiras](passo-05.md)
+6. [Exercício: hífens e nomes antigos](passo-06.md)
+7. [Bônus: download automático da UCD](passo-07.md)
 
 
 ## Nosso objetivo
@@ -62,4 +62,4 @@ Os campos que nos interessam são o primeiro e o segundo: o código Unicode em h
 
 Nosso programa `runas` vai usar o `UnicodeData.txt` para localizar caracteres pelo nome. Então, mãos à obra!
 
-Para iniciar o desenvolvimento, vá para o [Passo 1](passo-01). O código está no diretório `runas01` do repositório [https://github.com/ThoughtWorksInc/runas](https://github.com/ThoughtWorksInc/runas), mas eu recomendo que você copie o código em seu próprio espaço de trabalho, porque os códigos nos diretórios `runasNN` são o estado final de cada passo, porém existem passos intermediários que vale a pena você acompanhar escrevendo os testes, rodando os testes, e fazendo as mudanças necessárias para os testes passarem.
+Para iniciar o desenvolvimento, vá para o [Passo 1](passo-01.md). O código está no diretório `runas01` do repositório [https://github.com/ThoughtWorksInc/runas](https://github.com/ThoughtWorksInc/runas), mas eu recomendo que você copie o código em seu próprio espaço de trabalho, porque os códigos nos diretórios `runasNN` são o estado final de cada passo, porém existem passos intermediários que vale a pena você acompanhar escrevendo os testes, rodando os testes, e fazendo as mudanças necessárias para os testes passarem.

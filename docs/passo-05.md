@@ -330,4 +330,4 @@ U+1F63F	😿	CRYING CAT FACE
 U+1F640	🙀	WEARY CAT FACE
 ```
 
-Agora é um bom momento para exercícios. Veja instruções no [Passo 6](passo-06).
+Agora é um bom momento para exercícios. Veja instruções no [Passo 6](passo-06.md).
