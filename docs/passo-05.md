@@ -101,16 +101,16 @@ Primeiro vamos implementar a função `contém`, que devolve `true` se uma fatia
 Para decifrar a elaborada sintaxe marcada com ➊, ➋, ➌ e ➍ em `TestContém` (mais abaixo), vale a pena ver um caso mais simples da mesma sintaxe. Suponha que você quer declarar e inicializar uma variável com uma fatia de bytes. Essa seria uma forma de fazê-lo:
 
 ```go
-var octetos = []byte{10, 20, 30}
+octetos := []byte{10, 20, 30}
 ```
 
-Repare que temos a palavra reservada `var`, seguida do identificador da variável `octetos`, um sinal `=`, e um valor literal do tipo `[]byte`. Valores literais de tipos compostos em Go são escritos assim: o identificador do tipo, seguido de zero ou mais itens ou campos entre chaves: `[]byte{10, 20, 30}`.
+Repare que temos o identificador da variável `octetos`, um sinal `=`, e um valor literal do tipo `[]byte`. Valores literais de tipos compostos em Go são escritos assim: o identificador do tipo, seguido de zero ou mais itens ou campos entre chaves: `[]byte{10, 20, 30}`.
 
-Agora vamos analisar `TestContém`, que usa uma declaração `var` semelhante, apenas mais extensa:
+Agora vamos analisar `TestContém`, que usa uma declaração semelhante, apenas mais extensa:
 
 ```go
 func TestContém(t *testing.T) {
-	var casos = []struct { // ➊
+	casos := []struct { // ➊
 		fatia     []string
 		procurado string
 		esperado  bool
@@ -129,13 +129,13 @@ func TestContém(t *testing.T) {
 }
 ```
 
-➊ Esta declaração `var` cria a variável `casos` e atribui a ela uma fatia de `struct` anônima. A `struct` é declarada dentro do primeiro par de `{}` com três campos: uma fatia de strings, uma string e um booleano.
+➊ Esta declaração cria a variável `casos` e atribui a ela uma fatia de `struct` anônima. A `struct` é declarada dentro do primeiro par de `{}` com três campos: uma fatia de strings, uma string e um booleano.
 
 ➋ Completando a declaração `var`, o segundo par de `{}` contém o valor literal da `[]struct`, que são três itens delimitados por `{}`, sendo que cada item é formado por uma fatia de strings, uma string e um booleano.
 
 ➌ É obrigatório incluir essa vírgula ao final do último item de um literal composto de várias linhas, se você quiser fechar a chave do literal na próxima linha como fizemos aqui.
 
-➍ Aqui termina a declaração `var` que começou em ➊.
+➍ Aqui termina a declaração que começou em ➊.
 
 ➎ Usamos a sintaxe de laço `for/range` para percorrer os três itens de `casos`. A cada iteração, o `for/range` produz dois valores: um índice a partir de zero (que descartamos atribuindo a `_`) e o valor do item correspondente, que atribuímos a `caso`.
 

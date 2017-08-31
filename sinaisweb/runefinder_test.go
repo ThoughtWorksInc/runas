@@ -39,7 +39,7 @@ func TestAnalisarLinha(t *testing.T) {
 }
 
 func TestAnalisarLinhaComHífenECampo10(t *testing.T) {
-	var casos = []struct { // ➊
+	casos := []struct { // ➊
 		linha    string
 		runa     rune
 		nome     string

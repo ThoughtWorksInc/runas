@@ -82,7 +82,7 @@ func carregar(texto io.Reader) []string {
 func Listar(linhas []string, consulta string) string {
 	termos := separar(consulta)
 
-	var buffer bytes.Buffer
+	buffer := bytes.Buffer{}
 
 	for _, linha := range linhas {
 		runa, nome, palavrasNome := AnalisarLinha(linha) // ➊
