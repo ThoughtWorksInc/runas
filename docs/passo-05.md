@@ -281,7 +281,7 @@ Podemos criar um teste funcional do pacote para demonstrar o funcionamento de um
 ```go
 func Example_consultaDuasPalavras() { // ➊
 	oldArgs := os.Args // ➋
-	defer func() { os.Args = oldArgs }()
+	defer restauraArgs(oldArgs)
 	os.Args = []string{"", "cat", "smiling"}
 	main() // ➌
 	// Output:

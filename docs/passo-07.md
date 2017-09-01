@@ -39,7 +39,7 @@ func main() {
 		fmt.Println(err.Error())
 		os.Exit(1)
 	}
-	defer func() { ucd.Close() }()
+	defer ucd.Close()
 	consulta := strings.Join(os.Args[1:], " ")
 	Listar(ucd, strings.ToUpper(consulta))
 }

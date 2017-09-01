@@ -43,9 +43,13 @@ func ExampleListar_doisResultados() {
 	// U+003E	>	GREATER-THAN SIGN
 }
 
+func restauraArgs(argumentos []string) {
+	os.Args = argumentos
+}
+
 func Example() { // ➊
 	oldArgs := os.Args                   // ➋
-	defer func() { os.Args = oldArgs }() // ➌
+	defer restauraArgs(oldArgs) // ➌
 	os.Args = []string{"", "cruzeiro"}   // ➍
 	main()                               // ➎
 	// Output:
