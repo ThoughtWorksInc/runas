@@ -11,7 +11,7 @@ Seguindo com o TDD, vamos fazer um teste para nosso programa principal. Como pre
 ```go
 func Example() { // ➊
 	oldArgs := os.Args  // ➋
-	defer func() { os.Args = oldArgs }()  // ➌
+	defer restauraArgs(oldArgs)  // ➌
 	os.Args = []string{"", "cruzeiro"}  // ➍
 	main() // ➎
 	// Output:
@@ -25,7 +25,7 @@ Esse teste traz várias novidades:
 
 ➋ Vamos simular a passagem de argumentos pela linha de comando. O primeiro passo é copiar os argumentos de `os.Args` para `oldArgs`, assim poderemos restaurá-los depois. Para acessar `os.Args`, não esqueça de incluir o pacote `os` na declaração `import` de `rundefinder_test.go`.
 
-➌ Criamos uma função anônima que vai restaurar o valor de `os.Args` no final da nossa função `Example`. Leia mais sobre a instrução `defer` logo adiante.
+➌ Criamos uma função que vai restaurar o valor de `os.Args` no final da nossa função `Example`. Leia mais sobre a instrução `defer` logo adiante.
 
 ➍ Mudamos os valor de `os.Args` para fazer o teste. Observe a sintaxe de uma fatia literal: primeiro o tipo `[]string`, depois os itens entre `{}`. O primeiro item de `os.Args` é o nome do programa (irrelevante para o nosso teste). O segundo item é a palavra que vamos buscar, `"cruzeiro"`, cuidadosamente escolhida porque só existe um caractere Unicode que contém essa palavra em seu nome.
 
@@ -48,7 +48,7 @@ func main() { // ➊
 	if err != nil {                        // ➌
 		log.Fatal(err.Error()) // ➍
 	}
-	defer func() { ucd.Close() }()             // ➎
+	defer ucd.Close()              // ➎
 	consulta := strings.Join(os.Args[1:], " ") // ➏
 	Listar(ucd, strings.ToUpper(consulta))     // ➐
 }

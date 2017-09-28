@@ -145,9 +145,13 @@ func ExampleListar_duasPalavras() {
 	// U+0043	C	LATIN CAPITAL LETTER C
 }
 
+func restauraArgs(argumentos []string) {
+	os.Args = argumentos
+}
+
 func Example() {
 	oldArgs := os.Args
-	defer func() { os.Args = oldArgs }()
+	defer restauraArgs(oldArgs)
 	os.Args = []string{"", "cruzeiro"}
 	main()
 	// Output:
@@ -156,7 +160,7 @@ func Example() {
 
 func Example_consultaDuasPalavras() { // ➊
 	oldArgs := os.Args // ➋
-	defer func() { os.Args = oldArgs }()
+	defer restauraArgs(oldArgs)
 	os.Args = []string{"", "cat", "smiling"}
 	main() // ➌
 	// Output:
@@ -167,7 +171,7 @@ func Example_consultaDuasPalavras() { // ➊
 
 func Example_consultaComHífenECampo10() {
 	oldArgs := os.Args
-	defer func() { os.Args = oldArgs }()
+	defer restauraArgs(oldArgs)
 	os.Args = []string{"", "quote"}
 	main()
 	// Output:
